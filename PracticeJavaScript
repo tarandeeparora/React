@@ -1,0 +1,301 @@
+//Javascript ECMA6 Features
+//let and const
+//arrow function
+//import and export
+
+
+//Using Normal function
+
+function myfun(age)
+{
+  console.log(age);
+}
+myfun('123');
+
+
+
+//-----------------------------------------------
+
+//Using Arrow function
+
+
+//passing double arguments age and name
+
+var myfun = (age,name) =>
+{
+  console.log(age,name);
+}
+myfun('123','taran');
+
+//---------------------------------------------------------
+
+//We don't need bracket/paranthesis if its single argument, using age.
+
+var myfun = age =>
+{
+  console.log(age);
+}
+myfun('123');
+
+------------------------
+
+//Using normal function if don't decided the the name but passing the value then.
+
+function myfun()
+{
+  console.log('123');
+}
+myfun();
+
+
+//Using arrow function if don't decided the the name but passing the value then.
+
+const myfun = () =>
+{
+  console.log('123');
+}
+myfun();
+
+
+//Multiplying the number and using "return"
+
+const myfun = (number) =>
+{
+  return number*2 ;
+}
+console.log (myfun(2))
+
+//Multiplying the number and WITHOUT using "return" and "curly braces".
+//we don't need to use return  and curly braces if we are using arrow function thats the beacuty of arrow function.
+//As discussed in above example, we can remove paranthesis/ brackets of 'number' too if argument is single.
+
+
+const myfun = (number) =>
+number*2 ;
+
+console.log (myfun(2))
+
+=============================================
+
+
+CLASSES:-
+
+
+
+class Person{                 //1st creating class
+  
+  constructor(){              //2nd adding constructor
+    
+    this.name=('robin')
+  }
+
+
+  printrobinName()            //3rd adding function to print
+  {
+    console.log(this.name)
+  }
+}
+  
+const person = new Person();  // 4th In class, using new keyword is mandatory to call the class.
+person.printrobinName();      //calling the actual function
+
+--------------------------------------------------------
+
+//without explanation
+
+class Person{
+  
+  constructor(){  
+    
+    this.name=('robin')
+  }
+
+
+  printrobinName()
+  {
+    console.log(this.name)
+  }
+}
+  
+const person = new Person();
+person.printrobinName();
+
+---------------------------------------------------------------
+
+//USING INHERITANCE, adding class human.
+
+class Human{                             //Adding new class
+  constructor()
+  {
+    this.age=('15')
+  }
+  
+  printRobAge(){
+    
+    console.log(this.age)
+  }
+  
+}
+
+
+class Person extends Human{        //extending/inheriting "Human class" properties
+  
+  constructor()
+  {  
+    super ()                      //adding "Super()" is mandatory if you are using constructor    
+    this.name=('robin')
+    this.age=('20')              // can change the value also, it will show 20 instead of 15, check the next code output or remove this line, to see the difference.
+  }
+
+
+  printrobinName()
+  {
+    console.log(this.name)
+  }
+}
+  
+const person = new Person();
+person.printrobinName();
+person.printRobAge();            //calling the method from inherited class.
+
+
+//------------------------------------------------------------------------------------------
+
+//without explanayion using inheritance
+
+
+class Human{
+  constructor()
+  {
+    this.age=('15')
+  }
+  
+  printRobAge(){
+    
+    console.log(this.age)
+  }
+  
+}
+
+
+class Person extends Human{
+  
+  constructor()
+  {  
+    super ()
+    this.name=('robin')
+  }
+
+
+  printrobinName()
+  {
+    console.log(this.name)
+  }
+}
+  
+const person = new Person();
+person.printrobinName();
+person.printRobAge();
+
+//---------------------------------------------------------------
+
+//USING ECMA7 and using methods and properties
+
+//We don't need to use constructor.
+//We don't need to use "this" keyword in properties or for assigning the values. 
+//But we need it in the function to print it.
+
+//here is the code with explanation
+
+class Human{                             
+ /* constructor()    //don't need constructor
+  {
+    this.age=('15')   //don't need "this" keyword use " age ='15' " directly.
+  } */
+  age ='15';
+  
+  printRobAge(){
+    
+    console.log(this.age)
+  }
+  
+}
+
+
+class Person extends Human{        
+  
+ /* constructor()                   //don't need constructor, neither Super()
+  {  
+    super ()                      //adding "Super()" is mandatory if you are using constructor, so we are not using it, hence super() is not needed.    
+    this.name=('robin')
+    this.age=('20')              //don't need 'this' keyword use " age ='15' " directly
+  }  */
+     name= 'robin';
+     age ='50';
+
+  printrobinName()
+  {
+    console.log(this.name)
+  }
+}
+  
+const person = new Person();
+person.printrobinName();
+person.printRobAge();            //calling the method from inherited class.
+
+
+// code without explanation
+
+class Human{                             
+  
+  age ='15';
+  
+  printRobAge(){
+    
+    console.log(this.age)
+  }
+  
+}
+
+
+class Person extends Human{        
+  
+     name= 'robin';
+     age ='50';
+
+  printrobinName()
+  {
+    console.log(this.name)
+  }
+}
+  
+const person = new Person();
+person.printrobinName();
+person.printRobAge();            
+
+
+  
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
